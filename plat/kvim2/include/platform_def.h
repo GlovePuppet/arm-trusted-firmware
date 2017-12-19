@@ -19,7 +19,7 @@
 
 #define PLATFORM_STACK_SIZE		ULL(0x1000)
 
-#define PLATFORM_MAX_CPUS_PER_CLUSTER	U(4)
+#define PLATFORM_MAX_CPUS_PER_CLUSTER	U(8)
 #define PLATFORM_CLUSTER_COUNT		U(1)
 #define PLATFORM_CLUSTER0_CORE_COUNT	PLATFORM_MAX_CPUS_PER_CLUSTER
 #define PLATFORM_CORE_COUNT		PLATFORM_CLUSTER0_CORE_COUNT
@@ -63,22 +63,22 @@
  * secure DRAM. Note that this is all actually DRAM with different names,
  * there is no Secure RAM in the Raspberry Pi 3.
  */
-#define SEC_ROM_BASE			ULL(0x00000000)
-#define SEC_ROM_SIZE			ULL(0x00010000)
+#define SEC_ROM_BASE			ULL(0xD9040000)
+#define SEC_ROM_SIZE			ULL(0x00040000)
 
 /* FIP placed after ROM to append it to BL1 with very little padding. */
 #define PLAT_KVIM2_FIP_BASE		ULL(0x00010000)
 #define PLAT_KVIM2_FIP_MAX_SIZE		ULL(0x001F0000)
 
 /* We have 16M of memory reserved at at 256M */
-#define SEC_SRAM_BASE			ULL(0x10000000)
-#define SEC_SRAM_SIZE			ULL(0x00100000)
+#define SEC_SRAM_BASE			ULL(0xD9000000)
+#define SEC_SRAM_SIZE			ULL(0x00014000)
 
-#define SEC_DRAM0_BASE			ULL(0x10100000)
-#define SEC_DRAM0_SIZE			ULL(0x00200000)
+#define SEC_DRAM0_BASE			ULL(0x78000000)
+#define SEC_DRAM0_SIZE			ULL(0x08000000)
 
-#define NS_DRAM0_BASE			ULL(0x10300000)
-#define NS_DRAM0_SIZE			ULL(0x00D00000)
+#define NS_DRAM0_BASE			ULL(0x00000000)
+#define NS_DRAM0_SIZE			ULL(0x78000000)
 /* End of reserved memory */
 
 /*

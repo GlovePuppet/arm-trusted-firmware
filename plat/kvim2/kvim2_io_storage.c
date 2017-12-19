@@ -32,14 +32,18 @@
 #endif /* TRUSTED_BOARD_BOOT */
 
 /* IO devices */
+#if 0
 static const io_dev_connector_t *fip_dev_con;
+#endif
 static uintptr_t fip_dev_handle;
+#if 0
 static const io_dev_connector_t *memmap_dev_con;
+#endif
 static uintptr_t memmap_dev_handle;
 
 static const io_block_spec_t fip_block_spec = {
-	.offset = PLAT_RPI3_FIP_BASE,
-	.length = PLAT_RPI3_FIP_MAX_SIZE
+	.offset = PLAT_KVIM2_FIP_BASE,
+	.length = PLAT_KVIM2_FIP_MAX_SIZE
 };
 
 static const io_uuid_spec_t bl2_uuid_spec = {
